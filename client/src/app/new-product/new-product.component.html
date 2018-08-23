@@ -1,0 +1,33 @@
+<!-- {{ product | json }} -->
+<div id = "Box">
+    <h2>New Product</h2>
+    <h3>Name: 
+        <input type="text" name="product.name" [(ngModel)] = "product.name">
+    </h3>
+    <h4 *ngIf="product.errors.name">
+        * {{ product.errors.name.message }}
+    </h4>
+
+    <h3>Qty: 
+        <input type="text" name="product.quantity" [(ngModel)] = "product.quantity">
+    </h3>
+    <h4 *ngIf="product.errors.quantity">
+        * {{ product.errors.quantity.message }}
+    </h4>
+
+    <h3>Price: 
+        <input type="text" name="product.price" [(ngModel)] = "product.price">
+    </h3>
+    <h4 *ngIf="product.errors.price">
+        * {{ product.errors.price.message }}
+    </h4>
+    
+    <button routerLink="/products">Back</button>
+    
+    <form (submit)="reset()">
+        <input type="submit" value="Reset">
+    </form>
+    <form (submit)="create()">
+        <input type="submit" value="Create Product">
+    </form>
+</div>

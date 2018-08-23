@@ -1,0 +1,51 @@
+<!-- {{ allProducts | json }} -->
+<div id = "Box">
+    <div id = "title">
+        <h2>Product List</h2>
+        <button class="newButton" routerLink="/products/create">
+            Add New Product
+        </button>
+    </div>
+    <table>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Qty
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+        <tr *ngFor="let prod of allProducts">
+            <td>
+                {{ prod._id }}
+            </td>
+            <td>
+                {{ prod.name }}
+            </td>
+            <td>
+                {{ prod.quantity }}
+            </td>
+            <td>
+                ${{ prod.price }}
+            </td>
+            <td>
+                <button class = "NavButtons" routerLink="/products/edit/{{ prod._id }}">
+                    Edit
+                </button>
+                <button class = "NavButtons" routerLink="/products/info/{{ prod._id }}">
+                    Details
+                </button>
+            </td>
+        </tr>
+    </table>
+
+</div>

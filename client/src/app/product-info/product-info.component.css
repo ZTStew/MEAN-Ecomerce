@@ -1,0 +1,14 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+#Box {
+    border: 1px solid black;
+    width: 90%;
+    height: 80vh;
+    margin: 5%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-top: 1%;
+}
