@@ -1,7 +1,7 @@
 <!-- {{ allProducts | json }} -->
 <div id = "Box">
     <div id = "title">
-        <h2>Product List</h2>
+        <h2>Product List:</h2>
         <button class="newButton" routerLink="/products/create">
             Add New Product
         </button>
@@ -9,41 +9,43 @@
     <table>
         <tr>
             <th>
-                ID
+                <h3>ID</h3>
             </th>
             <th>
-                Name
+                <h3>Name</h3>
             </th>
             <th>
-                Qty
+                <h3>Qty</h3>
             </th>
             <th>
-                Price
+                <h3>Price</h3>
             </th>
             <th>
-                Action
+                <h3>Action</h3>
             </th>
         </tr>
         <tr *ngFor="let prod of allProducts">
             <td>
-                {{ prod._id }}
+                <h4>{{ prod._id }}</h4>
             </td>
             <td>
-                {{ prod.name }}
+                <h4>{{ prod.name }}</h4>
             </td>
             <td>
-                {{ prod.quantity }}
+                <h4>{{ prod.quantity }}</h4>
             </td>
             <td>
-                ${{ prod.price }}
+                <h4>${{ prod.price }}</h4>
             </td>
-            <td>
-                <button class = "NavButtons" routerLink="/products/edit/{{ prod._id }}">
-                    Edit
-                </button>
-                <button class = "NavButtons" routerLink="/products/info/{{ prod._id }}">
-                    Details
-                </button>
+            <td class = "extraPadding">
+                <div class = "buttonz">
+                    <button class = "NavButtons" routerLink="/products/edit/{{ prod._id }}">
+                        Edit
+                    </button>
+                    <button class = "NavButtons" routerLink="/products/info/{{ prod._id }}">
+                        Details
+                    </button>
+                </div>
             </td>
         </tr>
     </table>

@@ -1,3 +1,13 @@
 h1 {
-    margin-left: 20px;
+    margin-top: 10px;
+    display: inline-block;
+    margin-left: 5%;
+}
+
+img{
+    display: inline-block;
+    width: 100px;
+    vertical-align: center;
+    position: relative;
+    bottom: 2px;
 }

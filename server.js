@@ -8,11 +8,9 @@ let port = 8000;                                                                
 
 let app = express();                                                            // tells app to use express
 
-// what does it do?
 app.use(bodyParser.urlencoded({extended:true}));                                // allows bodyParser to work with more complex functions(if set to false, it will be more shallow and unable to work with things like nested functions)
-// reword?
 app.use(express.json());                                                        // tells app to use express in json format
-app.use(express.static(path.join(__dirname,'/client/dist/client')));     // tells app to use the staic folder at the written route
+app.use(express.static(path.join(__dirname,'/client/dist/client')));            // tells app to use the staic folder at the written route
 app.use(flash());                                                               // tells app to use flash
 
 app.use(session({                                                               // tells app to use session

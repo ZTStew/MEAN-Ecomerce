@@ -1,14 +1,46 @@
 <!-- {{ product | json }} -->
 <div id = "Box" *ngIf="product">
     <h2>Product Details</h2>
+    <hr/>
 
-    <h3>Name: {{ product.name }}</h3>
-    <h3>Qty: {{ product.quantity }}</h3>
-    <h3>Price: ${{ product.price }}</h3>
-
-    <button routerLink="/products">Back</button>
-
-    <form *ngIf="product.quantity === 0" (submit)="delete(product._id)">
-        <input type="submit" value="Delete Product">
-    </form>
+    <div class = "tableBox">
+        <table>
+            <tr>
+                <td>
+                    <h3>Name:</h3>
+                </td>
+                <td>
+                    <h3>{{ product.name }}</h3>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h3>Qty:</h3>
+                </td>
+                <td>
+                    <h3>{{ product.quantity }}</h3>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h3>Price:</h3>
+                </td>
+                <td>
+                    <h3>${{ product.price }}</h3>
+                </td>
+            </tr>
+        </table>
+        <table class = "fewButton">
+            <tr>
+                <td>
+                    <button routerLink="/products">Back</button>
+                </td>
+                <td>
+                    <form *ngIf="product.quantity === 0" (submit)="delete(product._id)">
+                        <input type="submit" value="Delete Product">
+                    </form>
+                </td>
+            </tr>
+        </table>
+    </div>
 </div>
